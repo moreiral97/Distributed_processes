@@ -20,7 +20,7 @@ $ docker info
 
 # WORKING WITH CONTAINERS
 
-### Create an run a container in background
+### Create an run a container in foreground
 
 ```
 $ docker container run -it -p 80:80 nginx

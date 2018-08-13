@@ -20,10 +20,16 @@ $ docker info
 
 # WORKING WITH CONTAINERS
 
-### Create an run a container (--detach runs in background) We are using nginx as our example image/repo
+### Create an run a container in background
 
 ```
-$ docker container run --detach --publish 80:80 nginx
+$ docker container run -it -p 80:80 nginx
+```
+
+### Create an run a container in background
+
+```
+$ docker container run -d -p 80:80 nginx
 ```
 
 ### Shorthand

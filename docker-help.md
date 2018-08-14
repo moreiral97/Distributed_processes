@@ -378,23 +378,23 @@ COPY index.html index.html
 ### Build image from Dockerfile
 
 ```
-$ docker image build -t nginx-with-html
+$ docker image build -t nginx-website
 ```
 
 ### Running it
 
 ```
-$ docker container run -p 80:80 --rm nginx-with-html
+$ docker container run -p 80:80 --rm nginx-website
 ```
 
 ### Tag and push to Dockerhub
 
 ```
-$ docker image tag nginx-with-html:latest btraversy/nginx-with-html:latest
+$ docker image tag nginx-website:latest btraversy/nginx-website:latest
 ```
 
 ```
-$ docker image push bradtraversy/nginx
+$ docker image push bradtraversy/nginx-website
 ```
 
 # VOLUMES
@@ -476,7 +476,7 @@ docker volume inspect mysql-db
 ### Run and be able to edit index.html file (local dir should have the Dockerfile and the index.html)
 
 ```
-$ docker container run -d --name nginx -p 80:80 -v C:/Users/Brad/dev/udemy-docker-mastery/dockerfile-sample-2:/usr/share/nginx/html nginx
+$ docker container run  -p 80:80 -v $(pwd):/usr/share/nginx/html nginx
 ```
 
 ### Go into the container and check
@@ -491,12 +491,6 @@ $ ls -al
 
 ```
 $ touch test.txt
-```
-
-### Example bind mount for Jekyll (From Bret Fishers course)
-
-```
-$  docker run -p 80:4000 -v C:/Users/Brad/dev/udemy-docker-mastery/bindmount-sample-1:/site bretfisher/jekyll-serve
 ```
 
 # DOCKER COMPOSE
